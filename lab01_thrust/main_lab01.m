@@ -46,5 +46,6 @@ plot(V,thrust_2);
 hold off;
 xlabel("Швидкість, [м/с]")
 ylabel("Тяга, [Н]")
+legend ("Тяга гвинта 1","Тяга гвинта 2");
 grid on;
 
