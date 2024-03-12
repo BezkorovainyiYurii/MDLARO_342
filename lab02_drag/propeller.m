@@ -8,8 +8,8 @@ function [thrust_force,drag_torque] = propeller(n_blades,length_blade,geom_blade
 % V_forvard - поступальна швидкість руху гвинта
 % rho - щільність повітря
 
-  chord_blade = @(R) length_blade*interp1(geom_blade(:,1),geom_blade(:,2),R/length_blade,"extrap",0);
-  angle_blade = @(R) interp1(geom_blade(:,1),geom_blade(:,3),R/length_blade,"extrap",0);
+  chord_blade = @(R) length_blade*interp1(geom_blade(:,1),geom_blade(:,2),R/length_blade,'linear',0);
+  angle_blade = @(R) interp1(geom_blade(:,1),geom_blade(:,3),R/length_blade,'linear',0);
 
   radial_velocity = @(R) RPM/60*2*pi*R;
   total_velocity = @(R) sqrt(V_forvard.^2 + radial_velocity(R).^2);
